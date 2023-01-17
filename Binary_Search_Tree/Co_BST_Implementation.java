@@ -10,8 +10,8 @@ public class Co_BST_Implementation {
         tree.insert(8);
         tree.insert(12);
         tree.insert(11);
-        tree.root.getLeft().getRight().getData(); // 8
-        tree.root.getRight().getLeft().getData(); // 11
+        System.out.println(tree.root.getLeft().getRight().getData()); // 8
+        System.out.println(tree.root.getRight().getLeft().getData()); // 11
     }
 
     }
