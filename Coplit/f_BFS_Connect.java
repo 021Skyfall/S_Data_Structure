@@ -15,7 +15,7 @@ public class f_BFS_Connect {
         System.out.println(result);
     }
 
-    public static int connectedVertices(int[][] edges) {
+    private static int connectedVertices(int[][] edges) {
         // 연결된 버텍스를 하나의 묶음으로 해당 묶음은 총 몇개냐는 문제임
         // 최대 버택스 찾기
         int[] big = {0};
@@ -48,7 +48,7 @@ public class f_BFS_Connect {
         return count;
     }
     // bfs 활용
-    public static boolean[] bfs_array(int[][] adj, int vertex, boolean[] visit) {
+    private static boolean[] bfs_array(int[][] adj, int vertex, boolean[] visit) {
         // bfs 니까 큐 사용
         Queue<Integer> q = new LinkedList<>();
         // 시작지점을 큐에 넣고, 해당 버텍스의 방문 여부 변경
@@ -70,4 +70,14 @@ public class f_BFS_Connect {
 }
 // 영상 다 보고 나니까 흐름이랑 왜 어떻게 돌아가는지는 알겠는데
 // 이걸 계획하고서 짠다는게 진짜...
-// 일단 이 글 다시보면 내가 직접 흐름 작성 ㄱㄱ
+/* 흐름
+가장 먼저 매개변수 이중배열로 그래프를 만들어야함
+현재 입력 받은 배열 중 가장 큰 버택스는 5이기 때문에 그래프의 크기는 5*5
+이후 5*5인 배열을 순회하면서 방문여부를 체크하기 위해 해당 길이만큼의 일차원 배열 선언
+컴포넌트가 몇 개 인지 세어줄 변수 선언
+이후 방문 여부 배열을 순회하면서 컴포넌트 카운트, 방문 여부 체크
+bfs 는 큐를 생성하고서 0부터 정수로 이어지는 최대 버텍스 까지 순회하고
+각각에 해당하는 방문여부 배열의 인덱스를 true 로 변경하고
+방문 여부를 리턴해서 방문 여부 배열을 바꿔주고
+마지막으로 개수를 리턴하면 됨
+*/
